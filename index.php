@@ -4,7 +4,7 @@ include_once 'Classes/Database.php';
 
 if (isset($_POST['delete'])) {   
     (new Service)->deleteProducts($_POST['checkbox']);
-    echo "<meta http-equiv='refresh' content='0'>";
+    header("Location: index.php");
 }
 ?>
 

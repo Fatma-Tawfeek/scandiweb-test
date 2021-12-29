@@ -4,7 +4,7 @@ require_once 'Classes/Product.php';
 
 if (isset($_POST['submit'])) {    
     (new $_POST['productType']($_POST))->addProduct();
-     echo "<script>window.location.href='index.php'</script>";
+    header("Location: index.php");
 }
 ?>
 
