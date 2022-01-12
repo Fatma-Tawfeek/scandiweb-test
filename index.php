@@ -2,7 +2,7 @@
 include_once 'Classes/Service.php';
 include_once 'Classes/Database.php';
 
-if (isset($_POST['delete'])) {   
+if (isset($_POST['delete'])) {
     (new Service)->deleteProducts($_POST['checkbox']);
     header("Location: index.php");
 }
@@ -43,14 +43,14 @@ if (isset($_POST['delete'])) {
                 //Loop through array of objects and display each of them
                 foreach ($products as $product) {
                     echo '
-                <div class="col-3 mb-5">
-                        <div class="product border border-secondary rounded bg-light p-4">
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                        <div class="card border rounded bg-light p-2 mb-4">
                         <input type="checkbox" class="delete-checkbox move-left" name="checkbox[]" value="' . $product->id . '">
-                            <div class="product-body">
-                                <h6 class="text-center">' . $product->sku . '</h6>
-                                <h6 class="text-center">' . $product->name . '</h6>
-                                <h6 class="text-center">' . $product->price . ' $</h6>
-                                <h6 class="text-center">' . $product->specification . '</h6>
+                            <div class="card-body text-center">
+                                <h6>' . $product->sku . '</h6>
+                                <h6>' . $product->name . '</h6>
+                                <p class="mb-2 text-muted">' . $product->price . ' $</p>
+                                <p>' . $product->attribute . '</p>
                             </div>
                         </div>
                 </div>';
@@ -59,11 +59,11 @@ if (isset($_POST['delete'])) {
             </div>
         </form>
     </div>
-    <div class="footer">    
-      <div class="container text-center">         
+    <div class="footer">
+      <div class="container text-center">
         <span class="text-muted">Scandiweb Test Assigment</span>
       </div>
-    </div>    
+    </div>
     <script src="js/script.js"></script>
 </body>
 

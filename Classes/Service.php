@@ -8,7 +8,7 @@ class Service
         $this->db = new Database;
     }
 
-    //Get all the products from the database
+    
     public function getProducts()
     {
         $this->db->query("SELECT * FROM products");
@@ -16,7 +16,7 @@ class Service
         return $result;
     }
 
-    //Delete products. Takes an array with all id's that should be removed
+    
     public function deleteProducts($arr)
     {
         foreach ($arr as $id) {

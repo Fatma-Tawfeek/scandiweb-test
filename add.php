@@ -3,7 +3,7 @@ require_once 'Classes/Database.php';
 require_once 'Classes/Product.php';
 
 if (isset($_POST['submit'])) {    
-    (new $_POST['productType']($_POST))->addProduct();
+    (new Product($_POST))->addProduct();
     header("Location: index.php");
 }
 ?>
@@ -35,7 +35,7 @@ if (isset($_POST['submit'])) {
             </div>
         </div>
         <hr>
-        <form action="" method="POST" id="product_form">
+        <form method="POST" id="product_form">
             <div class="row">
                 <div class="col-2 mt-3">
                     <label for="sku">SKU:</label><br>
